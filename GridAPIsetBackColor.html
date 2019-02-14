@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Fix for IE7 -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="screen" href="./static/style/default.css"/>
+<link rel="stylesheet" type="text/css" href="./static/style/grid/default.css" />
+<script type="text/javascript" src="./js/config.js" ></script>
+<script type="text/javascript" src="./js/grid.js" ></script>
+</head>
+<body>
+
+This is an example of EditGrid Grid API: editgrid.Style.setBackColor()
+<br />
+Last updated: 2008-June-04
+<br />
+<hr />
+
+  <div id="gridContainer" style="height: 600px; width: 100%" ></div>
+
+  <script type="text/javascript">
+
+    var sessionKey = 'YOURSESSIONKEY'; // replace with the obtained session key
+    var bookpath = '/tnc/developer/Grid_API_setBackColor';
+
+    var grid = new editgrid.Grid({ sessionKey: sessionKey, suppressSessionKeyWarning: 1 });
+    var layout = grid.getStandardLayout();
+    layout.doLayout(document.getElementById('gridContainer'), grid);
+    grid.openBook({ path: bookpath });
+
+    var newStyle = new editgrid.Style();     
+    newStyle.setBackColor("0x0000ff"); // setBackColor() accepts number only
+
+    var book = grid.getWorkbook();
+    onloadBook = function () {
+      var sheet = book.getSheetByIndex(0); 
+      var range = sheet.getRange('B1:F10');     
+      range.setStyle(newStyle);                         
+    };
+    book.addOnLoadListener(onloadBook);
+  </script>
+
+</body>
+</html>
+
+

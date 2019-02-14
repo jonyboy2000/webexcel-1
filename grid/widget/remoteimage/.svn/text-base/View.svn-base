@@ -1,0 +1,23 @@
+<div>
+<div attachPoint="root" title="Remote Image" style="font-size: 11px">
+<form attachPoint="buttonForm">
+<table cellpadding="3">
+<tr>
+	<td>Image URL</td>
+	<td><input type="text" style="width:320Px" attachPoint="inputUrl" /></td>
+</tr>
+<tr>
+	<td>Link URL</td>
+	<td><input type="text" style="width:320px" attachPoint="inputLinkUrl" /></td>
+</tr>
+<tr>
+<td colspan="2" align="right">
+	<div class="ToolboxBreakLine"></div>
+	<input type="submit" class="InputButton" value=" 确定 " attachPoint="buttonSubmit" />
+	<input type="button" class="InputButton" value="取消"  attachPoint="buttonCancel" />
+</td>
+</tr>
+</table>
+</form>
+</div>
+</div>

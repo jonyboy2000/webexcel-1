@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workbook xmlns:gnm="http://www.gnumeric.org/v10.dtd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gnumeric.org/v9.xsd">
+    <Version Epoch="1" Major="10" Minor="1" Full="1.10.1"/>
+    <Attributes>
+        <Attribute>
+            <type>4</type>
+            <name>WorkbookView::show_horizontal_scrollbar</name>
+            <value>TRUE</value>
+        </Attribute>
+        <Attribute>
+            <type>4</type>
+            <name>WorkbookView::show_vertical_scrollbar</name>
+            <value>TRUE</value>
+        </Attribute>
+        <Attribute>
+            <type>4</type>
+            <name>WorkbookView::show_notebook_tabs</name>
+            <value>TRUE</value>
+        </Attribute>
+        <Attribute>
+            <type>4</type>
+            <name>WorkbookView::do_auto_completion</name>
+            <value>TRUE</value>
+        </Attribute>
+        <Attribute>
+            <type>4</type>
+            <name>WorkbookView::is_protected</name>
+            <value>FALSE</value>
+        </Attribute>
+    </Attributes>
+    <office:document-meta xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:ooo="http://openoffice.org/2004/office" office:version="1.1">
+        <office:meta>
+            <meta:creation-date>2011-04-14T03:19:46Z</meta:creation-date>
+            <dc:date>2011-04-20T06:21:34Z</dc:date>
+        </office:meta>
+    </office:document-meta>
+    <Calculation ManualRecalc="0" EnableIteration="1" MaxIterations="100" IterationTolerance="0.001" FloatRadix="2" FloatDigits="53"/>
+    <SheetNameIndex>
+        <SheetName Cols="256" Rows="65536">工作表1</SheetName>
+    </SheetNameIndex>
+    <Geometry Width="1280" Height="554"/>
+    <Sheets>
+        <Sheet DisplayFormulas="0" HideZero="0" HideGrid="0" HideColHeader="0" HideRowHeader="0" DisplayOutlines="1" OutlineSymbolsBelow="1" OutlineSymbolsRight="1" Visibility="GNM_SHEET_VISIBILITY_VISIBLE" GridColor="0:0:0">
+            <Name>工作表1</Name>
+            <MaxCol>4</MaxCol>
+            <MaxRow>10</MaxRow>
+            <Zoom>1</Zoom>
+            <Names>
+                <Name>
+                    <name>Print_Area</name>
+                    <value>#REF!</value>
+                    <position>A1</position>
+                </Name>
+                <Name>
+                    <name>Sheet_Title</name>
+                    <value>"工作表1"</value>
+                    <position>A1</position>
+                </Name>
+            </Names>
+            <PrintInformation>
+                <Margins>
+                    <top Points="120" PrefUnit="mm"/>
+                    <bottom Points="120" PrefUnit="mm"/>
+                    <left Points="72" PrefUnit="mm"/>
+                    <right Points="72" PrefUnit="mm"/>
+                    <header Points="72" PrefUnit="mm"/>
+                    <footer Points="72" PrefUnit="mm"/>
+                </Margins>
+                <Scale type="percentage" percentage="100"/>
+                <vcenter value="0"/>
+                <hcenter value="0"/>
+                <grid value="0"/>
+                <even_if_only_styles value="0"/>
+                <monochrome value="0"/>
+                <draft value="0"/>
+                <titles value="0"/>
+                <do_not_print value="0"/>
+                <order>d_then_r</order>
+                <orientation>portrait</orientation>
+                <Header Left="" Middle="&amp;[TAB]" Right=""/>
+                <Footer Left="" Middle="Page &amp;[PAGE]" Right=""/>
+                <paper>iso_a4</paper>
+            </PrintInformation>
+            <Styles>
+                <StyleRegion Col="1" Row="1">
+                    <Style>
+                        <Font Unit="12"/>
+                    </Style>
+                </StyleRegion></Styles>
+            <Cols DefaultSizePts="48">
+                <ColInfo No="1" Unit="48" Count="4"/>
+            </Cols>
+            <Rows DefaultSizePts="12.75">
+                <RowInfo No="1" Unit="12.75" Count="10"/>
+            </Rows>
+            <Selections CursorCol="3" CursorRow="10">
+                <Selection startCol="3" startRow="10" endCol="3" endRow="10"/>
+            </Selections>
+            <Cells>
+            </Cells>
+            <SheetLayout TopLeft="A1"/>
+            <Solver ProblemType="0" MaxTime="30" MaxIter="100" NonNeg="1" Discr="0" AutoScale="0" ProgramR="0"/>
+        </Sheet>
+    </Sheets>
+    <UIData SelectedTab="0"/>
+</Workbook>

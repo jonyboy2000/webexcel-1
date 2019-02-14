@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/webexcel/!svn/ver/2/1/user/admin
+END
+.test.xml.alive
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/webexcel/!svn/ver/2/1/user/admin/.test.xml.alive
+END
+test.xml
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/webexcel/!svn/ver/2/1/user/admin/test.xml
+END
+xaa.xls
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/webexcel/!svn/ver/2/1/user/admin/xaa.xls
+END

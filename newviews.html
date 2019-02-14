@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Demo EditGrid</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <meta name="EditGrid-Revision" content="25260"/>
+        <meta name="EditGrid-Last-Changed-Date" content="2011-02-06 17:16:22 +0800 (Sun, 06 Feb 2011)"/>
+        <meta name="description" content="A web-based online spreadsheet with real-time collaboration features" />
+        <meta name="keywords" content="spreadsheet, online, web-based, real-time, collaboration" />
+        <link rel="shortcut icon" type="image/ico" href="./static/favicon.ico" />
+        <link rel="apple-touch-icon" type="image/png" href="./static/apple-touch-icon.png" />
+        <link rel="stylesheet" type="text/css" media="screen" href="./static/style/default.css"/>
+        <script type="text/javascript" src="./js/zh_cn.js" ></script>
+        <meta name="BookId" content="4368307"/>
+        <meta name="BookRevId" content="16394125"/>
+        <meta name="SheetIdList" content="93195744(0),93195745(1),93195746(2)"/>
+        <meta name="TokenStatus" content="none"/>
+        <link rel="stylesheet" type="text/css" href="./static/style/default.css" />
+        <script type="text/javascript">//<![CDATA[
+            var editgrid = {};
+            editgrid.config = {
+                "isRemoteGrid":0,
+                "oooc_url":1,
+                "gridletHost":"localhost",
+                "staticUrl":"./static/",
+                "defaultFont":"Arial",
+                "docFunctionBase":"doc/function/",
+                "hideMenuItems":[],
+                "initialSessionId":"d98141c4e0cdef9700800040c97601c30e041d02",
+                "enableRemoteData":1,
+                "enableVerticalAlign":0,
+                "gridletBaseUrl":"./",
+                "chatEventdUrl":"./",
+                "revUrl":"./",
+                "gridletDebug":0,
+                "gridletEnabled":1,
+                "timingSheetDiff":15000,
+                "gridEventdUrl":"./",
+                "profileUrl":"./js/",
+                "SidePaneChat":0,
+                "baseUrl":"./",
+                "timingKeepAlive":240000,
+                "acceptFonts":{
+                    "Garamond":"Garamond",
+                    "Geneva":"Geneva",
+                    "Century Gothic":"Century Gothic",
+                    "Arial":"Arial",
+                    "Times New Roman":"Times New Roman",
+                    "Tahoma":"Tahoma",
+                    "Georgia":"Georgia",
+                    "Trebuchet MS":"Trebuchet MS",
+                    "Comic Sans MS":"Comic Sans MS",
+                    "Verdana":"Verdana",
+                    "Courier New":"Courier New"
+                }
+            };
+            //]]></script>
+        <script type="text/javascript" src="./js/grid.js?25246"></script>
+        <style type="text/css">
+            body { overflow: hidden }
+        </style>
+    </head>
+    <body class="SkinDefault">
+        <div id="top" style="position: absolute; top: 0">&nbsp;</div>
+        <noscript>
+            <div style="width: 100%; text-align: right"><img class="Inline" style="margin: 5px 15px 2px 0px" src="//static/style/img/JavascriptDisabled.gif" alt="Javascript is not enabled."/></div>
+        </noscript>
+        <noscript>
+            <div style="padding: 10px">
+                <h2>错误！您的浏览器禁用了Javascript。 </h2> EditGrid需要Javascript来提供互动服务，所以不能在您现在的浏览器设置下工作。 <br/>请让您的浏览器支持Javascript并重新登录。如有疑问，请与您的系统管理员联络。
+                <p>但是，您现在可以<a href="./user/linzhai/12345.html">查看此电子表格的静态版本</a>。</p>
+            </div>
+        </noscript>
+        <div id="gridContainer" style="width:100%"></div>
+        <!-- BEGIN Widget Templates -->
+        <div style="display: none">
+            <div id="menubarRight">
+                <table style=""><tr>
+                        <td style="white-space: nowrap; font-size: 11px; font-style: italic; color: #c0c0c0; padding-left: 10px; padding-right: 10px" id="menubarRightStatus">
+		自动保存
+                        </td>
+                        <td class="NoPad">
+                            <div class="TopRightButton"
+                                 onclick="std.host.open('./grid/close/4368307')"
+                                 onmouseover="this.className = 'TopRightButtonHover'"
+                                 onmouseout="this.className = 'TopRightButton'"
+                                 onmousedown="this.className = 'TopRightButtonActive'"
+                                 onmouseup="this.className = 'TopRightButtonHover'">
+			关闭</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <span id="headerbar">
+            </span>
+            <div id="licenseBar">
+                <a id="licenseLink"  target="_blank"><span id="licenseIcon"></span></a>
+            </div>
+        </div>
+        <!-- END Widget Templates -->
+        <script type="text/javascript">//<![CDATA[
+            if (std.browser.isIE && std.browser.major == 6)
+                document.execCommand('BackgroundImageCache', false, true);
+            var grid = null;
+            var layout = null;
+            var gridControl = null;
+
+            function initGrid () {
+                grid = new editgrid.Grid();
+                grid.revision = "25246";
+                gridControl = new editgrid.EditGridControl(grid);
+                var statusBar = grid.statusBar;
+                var menuBarStatus = std.dom.element('menubarRightStatus');
+                if (menuBarStatus) {
+                    var statusTextMapping = {
+                        saving: loc('Saving') + ' ...',
+                        done  : loc('Auto Saved'),
+                        failed: loc('Failed')
+                    };
+                    std.topic.subscribe(grid, 'onStatusChange', function(currentStatus) {
+                        if (statusTextMapping[currentStatus] != null) {
+                            menuBarStatus.innerHTML = statusTextMapping[currentStatus];
+                        }
+                    });
+                }
+                var gridContainer = std.dom.element('gridContainer');
+
+                layout = grid.getStandardLayout();
+                layout.extend('headerbar'   , std.dom.element('headerbar'));
+                layout.extend('menubarRight', std.dom.element('menubarRight'));
+                layout.setResizeHandler(new editgrid.layout.HomeResizeHandler());
+                layout.doLayout(gridContainer, grid);
+                grid.setCaptureDocumentFocus(true);
+                grid.loadBook(16394125);
+            }
+            // init grid
+            editgrid.config.eventdEnabled = 1;
+            initGrid();
+            
+            //]]></script>
+    </body>
+</html>
