@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+        <meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible"/>
+        <meta content="25260" name="EditGrid-Revision"/>
+        <meta content="2011-02-06 17:16:22 +0800 (Sun, 06 Feb 2011)" name="EditGrid-Last-Changed-Date"/>
+        <meta content="A web-based online spreadsheet with real-time collaboration features" name="description"/>
+        <meta content="spreadsheet, online, web-based, real-time, collaboration" name="keywords"/>
+        <meta content="4368307" name="BookId"/>
+        <meta content="16394125" name="BookRevId"/>
+        <meta content="93195744(0),93195745(1),93195746(2)" name="SheetIdList"/>
+        <meta content="none" name="TokenStatus"/>
+        <title>Web Excel Demo</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="./static/style/default.css"/>
+        <style type="text/css">
+            body {overflow: hidden}
+        </style>
+        <script type="text/javascript"  >
+            var editgrida = {};
+            editgrida.config = {
+                "isRemoteGrid":0,
+                "oooc_url":1,
+                "gridletHost":"api.minierp.cn",
+                "staticUrl":"./static/",
+                "defaultFont":"Arial",
+                "docFunctionBase":"doc/function/",
+                "hideMenuItems":[],
+                "initialSessionId":'1',
+                "enableRemoteData":1,
+                "enableVerticalAlign":0,
+                "gridletBaseUrl":"http://localhost/editgrid/",
+                "revUrl":"http://api.minierp.cn/editgrid/",
+                "gridletDebug":0,
+                "gridletEnabled":1,
+                "timingSheetDiff":15000,
+                "gridEventdUrl":"http://api.minierp.cn/editgrid/",
+                "profileUrl":"./js",
+                "SidePaneChat":0,
+                "baseUrl":"http://api.minierp.cn/editgrid/",
+                "timingKeepAlive":240000,
+                "acceptFonts":{"Garamond":"Garamond","Geneva":"Geneva","Century Gothic":"Century Gothic","Arial":"Arial","Times New Roman":"Times New Roman","Tahoma":"Tahoma","Georgia":"Georgia","Trebuchet MS":"Trebuchet MS","Comic Sans MS":"Comic Sans MS","Verdana":"Verdana","Courier New":"Courier New"}};
+            var editgrid = {};
+            editgrid.config = {
+                "isRemoteGrid":0,
+                "oooc_url":1,
+                "gridletHost":"<?php echo $fsv; ?>",
+                "staticUrl":"./static/",
+                "defaultFont":"Arial",
+                "docFunctionBase":"./doc/function/",
+                "hideMenuItems":[],
+                "initialSessionId":"111",
+                "enableRemoteData":1,
+                "enableVerticalAlign":0,
+                "gridletBaseUrl":"./",
+                //                "chatEventdUrl":"<?php echo $sv; ?>",
+                "revUrl":"<?php echo $sv; ?>",
+                "gridletDebug":0,
+                "gridletEnabled":1,
+                "timingSheetDiff":150000,
+                "gridEventdUrl":"",//<?php echo $sv; ?>
+                "profileUrl":"./js/",
+                "SidePaneChat":0,
+                "baseUrl":"./",
+                "eventdClientFactory":"eventd.createCrossDomainClient",
+                "timingKeepAlive":240000,
+                "acceptFonts":{
+                    "Garamond":"Garamond",
+                    "Geneva":"Geneva",
+                    "Century Gothic":"Century Gothic",
+                    "Arial":"Arial",
+                    "Times New Roman":"Times New Roman",
+                    "Tahoma":"Tahoma",
+                    "Georgia":"Georgia",
+                    "Trebuchet MS":"Trebuchet MS",
+                    "Comic Sans MS":"Comic Sans MS",
+                    "Verdana":"Verdana",
+                    "Courier New":"Courier New"
+                }
+            };
+        </script>
+        <script type="text/javascript" src="./js/grid.js" ></script>
+        <script type="text/javascript" src="./js/zh_cn.js" ></script>
+    </head>
+    <body>
+        <div id="gridContainer" style="width: 100%" ></div>
+        <script type="text/javascript">
+            //<![CDATA[
+            grid = new editgrid.Grid();
+            grid.revision = "25246";
+            gridControl = new editgrid.EditGridControl(grid);
+            var gridContainer = std.dom.element('gridContainer');
+            layout = grid.getStandardLayout();
+            layout.setResizeHandler(new editgrid.layout.HomeResizeHandler());
+            layout.doLayout(gridContainer, grid);
+            grid.setCaptureDocumentFocus(true);
+            grid.loadBook('123456');
+            //]]>
+        </script>
+    </body>
+</html>
